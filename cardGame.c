@@ -19,7 +19,7 @@ void Play(int bet)
     // printf("Shuffling.....\n");
 
     //Now store the characters on the Heap Memory to create a memory leak
-    char *C = (char*)malloc(3*sizeof(char)); //c++: char *C = new char[3];
+    char *C = (char*)malloc(10000*sizeof(char)); //c++: char *C = new char[3];
     C[0] = 'J'; C[1] = 'Q', C[2] = 'K'; //AS A RESULT WE SEE AN INCREMENT IN THE MEM SIZE IN OUR TASK PROCESS MANAGER
 
 
@@ -50,6 +50,8 @@ void Play(int bet)
         cash -= bet;
         printf("You Loose! Result = %c %c %c Total Cash = %d", C[0],C[1],C[2],cash);
     }
+    // Clear the heap memory to prevent the memory leaks
+    free(C);
 
 }
 
