@@ -18,7 +18,7 @@ void Play(int bet)
     // char C[3] = {'J', 'Q', 'K'}; //define our array of cards
     // printf("Shuffling.....\n");
 
-    //Now store the characters on the Heap Memory
+    //Now store the characters on the Heap Memory to create a memory leak
     char *C = (char*)malloc(3*sizeof(char)); //c++: char *C = new char[3];
     C[0] = 'J'; C[1] = 'Q', C[2] = 'K'; //AS A RESULT WE SEE AN INCREMENT IN THE MEM SIZE IN OUR TASK PROCESS MANAGER
 
